@@ -1,7 +1,11 @@
-#onStartButton {
-    margin-bottom: 3em;
-}
+
 
 h2{
     margin-bottom: 1em;    
+}
+
+#blockchainCard{
+	width: 23rem; 
+	display:inline-block; 
+	margin: 0 10px 0 0;
 }
