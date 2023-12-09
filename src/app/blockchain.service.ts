@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Block } from './model/block';
-import { Data } from './model/data';
+import { Data, DataForm } from './model/data';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class BlockchainService {
     return this.httpClient.get<Block[]>(`${this.baseURL+"/start"}`);
   }
 
-  createBlock(data: Data): Observable<object>{
+  createBlock(data: DataForm): Observable<Object>{
     return this.httpClient.post((`${this.baseURL+"/create"}`), data)
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlockchainService } from '../blockchain.service';
 import { Block } from '../model/block';
-import { Data } from '../model/data';
+import { Data, DataForm } from '../model/data';
 
 
 @Component({
@@ -33,13 +33,10 @@ export class BlockchainComponent implements OnInit{
   }
   
 
-  data:Data = new Data()
-  block: Block = new Block()
+  dataform: DataForm = new DataForm()
   onCreate(){
-    this.data.isGenesis = false
 
-    this.block.data = this.data
-    this.blockchainService.createBlock(this.data)
+    this.blockchainService.createBlock(this.dataform)
       .subscribe({
         next: (data) => console.log("Creating: "+data),
         error: (error) => {console.log(error)

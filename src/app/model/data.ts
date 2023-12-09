@@ -4,5 +4,6 @@ export class Data {
 }
 
 export class DataForm {
-    content: string
+    data: string
+
 }
